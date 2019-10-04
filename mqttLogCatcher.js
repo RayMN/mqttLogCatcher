@@ -49,7 +49,7 @@ if (args.d) {
 	if (args.c) { console.log('DEUBG: CLIENT  = '+args.c); }
 	if (args.f) { console.log('DEUBG: LOGGILE = '+args.f); }
 	if (args.d) { console.log('DEUBG: Debug   = True'); }
-	if (args.h) { console.log('DEUBG: Help    = True');
+	if (args.h) { console.log('DEUBG: Help    = True'); }
 	if (args.d) { console.log(''); }
 }
 
