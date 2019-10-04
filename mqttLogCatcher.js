@@ -6,15 +6,11 @@
 * Inputs: MQTT Broker, Topic(s), ClientID, File Location
 * Outputs: File
 *
-* Author: Ray Wilson
-*
-*               wilsonprw@gmail.com
-*
 * Revisions:
 *	Date        Who     Description
 *	----------  ----    ----------------------------------------
 *	2019-10-02	prw     Created
-*	2019-10-04	prw		Few more minor tweaks, commenting
+*	2019-10-04	prw	Few more minor tweaks, commenting
 *
 ********************************************************************/
 
