@@ -20,7 +20,7 @@ const args = require('minimist')(process.argv.slice(2));
 // Check for required arguments (one of each -b, -t, -c, -f), display an error and exit if not present.
 if (!args.b || !args.t || !args.f || !args.c) {
 	console.log('');
-	console.log('   ERROR: Insufficient number of arguments!');
+	console.log(' ERROR: Insufficient number of arguments!');
 	console.log(' Example: node MQTTCapture.js -b BROKER -t TOPIC1 [-t TOPIC2] -c CLIENT -f FILEDIR [-d] [-h]');
 	console.log('   Where:');
 	console.log('         -b is the broker URL ex: "mqtt://localhost:1883".');
