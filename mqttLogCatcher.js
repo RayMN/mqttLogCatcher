@@ -21,13 +21,14 @@ const args = require('minimist')(process.argv.slice(2));
 if (!args.b || !args.t || !args.f || !args.c) {
 	console.log('');
 	console.log('   ERROR: Insufficient number of arguments!');
-	console.log(' Example: node MQTTCapture.js -b BROKER -t TOPIC1 [-t TOPIC2] -c CLIENT -f FILEDIR [-d]');
+	console.log(' Example: node MQTTCapture.js -b BROKER -t TOPIC1 [-t TOPIC2] -c CLIENT -f FILEDIR [-d] [-h]');
 	console.log('   Where:');
 	console.log('         -b is the broker URL ex: "mqtt://localhost:1883".');
-	console.log('         -t [one or more] is a topic ex: "dev/6881/core/log".');
-	console.log('         -c is this client ID ex : "index.js".');
+	console.log('         -t [one or more] is a topic ex: "dev/6881/app/log".');
+	console.log('         -c is this client ID ex : "mqttLogCatcher".');
 	console.log('         -f base log directory.');
 	console.log('         -d [optional] is for debug mode that enables console output.');
+	console.log('         -h [optional] this help message.');
 	console.log('');
 	if (args.d) {
 		if (args.b) { console.log('BROKER  = '+args.b); }
@@ -35,7 +36,7 @@ if (!args.b || !args.t || !args.f || !args.c) {
 		if (args.c) { console.log('CLIENTs = '+args.c); }
 		if (args.f) { console.log('FILEDIR = '+args.f); }
 		if (args.d) { console.log('Debug   = True'); } else { console.log('Debug   = False'); }
-		if (args.d) { console.log(''); }
+		if (args.h) { console.log('Help    = True'); } else { console.log('Help    = False'); }
 	}
 	console.log('');
 	process.exit(1);
@@ -48,6 +49,7 @@ if (args.d) {
 	if (args.c) { console.log('DEUBG: CLIENT  = '+args.c); }
 	if (args.f) { console.log('DEUBG: LOGGILE = '+args.f); }
 	if (args.d) { console.log('DEUBG: Debug   = True'); }
+	if (args.h) { console.log('DEUBG: Help    = True');
 	if (args.d) { console.log(''); }
 }
 
