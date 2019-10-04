@@ -1,0 +1,17 @@
+{
+  "name": "mqttLogCatcher",
+  "version": "0.1.0",
+  "description": "",
+  "main": "mqttLogCatcher.js",
+  "dependencies": {
+    "minimist": "^1.2.0",
+    "mqtt": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Ray Wilson <wilsonprw@gmail.com>",
+  "license": "MIT"
+}
