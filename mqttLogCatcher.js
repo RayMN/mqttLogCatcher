@@ -91,28 +91,18 @@ function onMessageReceived(topic, message) {
 			theMsg.message =  { "ERROR":"non-json data found" };
 	}
 
-	// Check to see if the message is a "log" message
-	// Expecting json messages
+	// Write to a log file based on the reason for logging.
 	if(source.reason === "log") {
+		// Check to see if the message is a "log" message
+		// Expecting json messages
 		var fn = args.f + source.environment +"-"+ source.instance +"-"+ source.application +"-"+ source.reason + ".json";
 		if (args.d) { console.log("DEBUG: TO log: " + JSON.stringify(theMsg) +"\n"); }
-		fs.appendFile(fn, JSON.stringify(theMsg)+"\n", (err) => {
-			// throws an error, you could also catch it here
-			if (err) throw err;
-			// success case, the file was saved
-		});
-	}
-
-	// Check to see if the message is a "test" message
-	// expeting ascii data - json, xml, html ... what ever
-	if(source.reason === "test") {
+		fs.appendFile(fn, JSON.stringify(theMsg)+"\n", (err) => { if (err) throw err; });
+	} else {
+		// All undefined logs will go into a txt file log
+		// expeting ascii data - json, xml, html ... what ever
 		var fn = args.f + source.environment +"-"+ source.instance +"-"+ source.application +"-"+ source.reason + ".txt";
 		if (args.d) { console.log("DEBUG: TO test: " + message +"\n"); }
-		fs.appendFile(fn, message + "\n", (err) => {
-			// throws an error, you could also catch it here
-			if (err) throw err;
-			// success case, the file was saved
-		});
+		fs.appendFile(fn, message + "\n", (err) => { if (err) throw err; });
 	}
-
 }
